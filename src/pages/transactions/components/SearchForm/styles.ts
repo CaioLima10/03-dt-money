@@ -13,6 +13,7 @@ export const SearchFormContainer = styled.form`
     padding: 1rem;
     border-radius: 6px;
     background-color: ${(props) => props.theme["gray-900"]};
+    color: ${(props) => props.theme["gray-100"]};
     border: 0;
   }
   
@@ -29,13 +30,19 @@ export const SearchFormContainer = styled.form`
     border-radius: 6px;
     padding: 1rem;
 
+    cursor: pointer;
+
     transition: 0.4s all ease-in-out;
 
-    &:hover{
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover{
       border-color: ${(props) => props.theme["green-300"]};
       background-color: ${(props) => props.theme["green-500"]};
       color: ${(props) => props.theme["white"]};
-      cursor: pointer;
     }
   }
 `
